@@ -273,9 +273,6 @@ $hot-pink: #ff0066;
 
 .navbar-nav > li {
   border-right: 2px solid white;
-  #up-for-voting-id {
-    border-left: 2px solid white;
-  }
 }
 
 .navbar .navbar-nav>li>a{
@@ -286,7 +283,7 @@ $hot-pink: #ff0066;
   margin-bottom: 10px;
 }
 
-.dropdown .dropdown-toggle {
+.navbar .navbar-nav>li>a:hover {
   background-color: $hot-pink; 
 }
 
@@ -312,4 +309,8 @@ $hot-pink: #ff0066;
   height: 10px;
   top: -15px;
   left: 45%;
+}
+
+.navbar-collapse {
+  max-height: none;
 }
