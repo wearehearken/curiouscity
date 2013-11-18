@@ -18,11 +18,11 @@ class Question < ActiveRecord::Base
   validates :email, length: {maximum: 255}, confirmation: true, email: true
   validates :email_confirmation, presence: true, on: :create
 
-  def self.with_status_and_category(status, category_name)
+  def self.with_status_and_category(status, category_name, no_page)
     if category_name.present?
-      includes(:categories).where(categories: {name: category_name}, status: status).order(created_at: :desc)
+      includes(:categories).where(categories: {name: category_name}, status: status).order(created_at: :desc).page(no_page).per(8)
     else
-      where(status: status).order(created_at: :desc)
+      where(status: status).order(created_at: :desc).page(no_page).per(8)
     end
   end
 

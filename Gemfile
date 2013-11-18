@@ -63,3 +63,4 @@ gem "flickrie", "~> 1.6.0"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'kaminari'

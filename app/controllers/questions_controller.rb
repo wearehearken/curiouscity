@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
       statuses = [Question::Status::Answered, Question::Status::Investigating]
     end
 
-    @questions = Question.with_status_and_category(statuses, params[:category_name])
+    @questions = Question.with_status_and_category(statuses, params[:category_name], params[:page])
     @featured_answers = @questions.select{|q| q.featured?}
     render 'index'
   end
