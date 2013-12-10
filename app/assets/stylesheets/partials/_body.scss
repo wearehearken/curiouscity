@@ -26,6 +26,15 @@ $question-height: $grid-unit * 8;
   padding-bottom: $grid-unit;
 }
 
+.question-background-xs {
+  height: $question-height;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  opacity: 0.9;
+}
+
 .question {
   background-image: image_url("bg_dots.png");
   // position: relative;
@@ -49,7 +58,7 @@ $question-height: $grid-unit * 8;
 
 .image-container.hover{
   @extend .blue-hover;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .comment-count-link.hover {
@@ -393,6 +402,24 @@ h2 {
 .tag-md { font-size: 14px; }
 .tag-bg { font-size: 17px; }
 
+.tint:before {  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  background: rgba(0,0,0, 0.6);  
+  -moz-transition: background .3s linear;  
+  -webkit-transition: background .3s linear;  
+  -o-transition: background .3s linear;  
+  transition: background .3s linear;  
+}  
+.tint:hover:before {  
+  background: none;  
+}
+
 @media (max-width: $mobile-max-width) {
   h2.rank {
     right: 0;
@@ -402,20 +429,40 @@ h2 {
   .vote.visible-xs, .voted.visible-xs{
     position: relative;
     float: right;
-    margin-left: $grid-unit/2;
-    top: -38;
+    top: 25px;
+    right: 0;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    // margin-left: $grid-unit/2;
+    // top: -38;
   }
 
   .question {
+    background-image: none;
     position: relative;
-    height: 280px;
-    margin-bottom: $grid-unit;
+    margin: 0;
+    // height: 280px;
+    // margin-bottom: $grid-unit;
+  }
+  .question.hover, .image-container.hover {
+    background-color: transparent;
+    color: white;
+  }
+  .tint.hover {
+    &:before {
+      @extend .blue-hover;
+      background-color: $nice-blue;
+      opacity: 0.5;
+    }
   }
   .question-row {
     margin-left: 0;
     margin-right: 0;
   }
   .question-text {
+    line-height: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     font-size: 14px;
     padding: 4px 8px 0 8px;
     .comment-count-link {
@@ -424,6 +471,8 @@ h2 {
     .question-link {
       position: relative;
       margin-right: 0;
+      color: white;
+      text-shadow: 2px 2px black;
     }
     .checkmark, .questionmark {
       margin: 0; 
@@ -435,17 +484,22 @@ h2 {
       margin: 0 !important;
       left: auto;
     }
+    .author, .comment-count-link {
+      color: white;
+      text-shadow: 2px 2px black;
+    }
     .author {
-      bottom: -26px;
+      // bottom: -26px;
       // height: 0;
     }
     .comment-count-link {
-      bottom: -26px;
+      // bottom: -26px;
       // height: 0;
       // padding: 0 8px 0 0;
     }
   }
   .question-image {
+    position: absolute;
     padding-left: 0;
     margin-left: 0;
     img {
