@@ -27,8 +27,8 @@ You should have received a copy of the GNU General Public License along with Cur
     <div class="questions">
       <% (display_order(@voting_round.questions)).each_with_index do |question, index| %>
         <div class="row question-row">
-          <div class="question" id="question<%= question.id.to_s %>">
-            <div class="question-image col-xs-12 col-sm-4">
+          <div class="question voting" id="question<%= question.id.to_s %>">
+            <div class="question-image voting col-xs-12 col-sm-4">
               <div class="question-background-xs tint visible-xs" data-picture-url="<%= question.picture_url %>"></div>
               <% if voted? %>
                 <h2 class = "rank hidden-xs" id="rank<%= question.id.to_s %>"><%= (index + 1).ordinalize %></h2>
@@ -40,7 +40,7 @@ You should have received a copy of the GNU General Public License along with Cur
               <%= if voted? and last_vote?(question.id) then content_tag(:div, nil, id: 'vote_confirm' + question.id.to_s, class: "voted hidden-xs") end %>
               <% if voted? %><span class="rank-triangle hidden-xs"></span><% end %>
             </div>
-            <%= render partial:'shared/question_text', locals:{question:question, voting_round: @voting_round, badge: false, index: index} %>
+            <%= render partial:'shared/question_text', locals:{question:question, voting_round: @voting_round, badge: false, voting: true } %>
           </div>
         </div>
       <% end %>
