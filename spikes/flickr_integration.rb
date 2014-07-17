@@ -8,14 +8,14 @@ Curious City is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with Curious City.  If not, see <http://www.gnu.org/licenses/>.
 =end
-require 'flickrie'
+require 'flickr-object'
 require "awesome_print"
 
 api_key = "<API_KEY HERE, get it from mingle card #139>"
-Flickrie.api_key = api_key
+Flickr.api_key = api_key
 # REMEMBER: USE SYMBOL AS THE EXTRAS KEY, or the API will not handle it correctly
 query = {:text => "Chicago", :license=>"1,2,3,4,5,6",:extras=>['owner_name','date_upload'],:per_page=>100}
-photos =  Flickrie.search_photos(query)
+photos =  Flickr.search_photos(query)
 photo = photos.first
 # original url
 url = "http://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg"

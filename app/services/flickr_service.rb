@@ -8,7 +8,7 @@ Curious City is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with Curious City.  If not, see <http://www.gnu.org/licenses/>.
 =end
-require 'flickrie'
+require 'flickr-objects'
 
 class FlickrService
   def get_api_key
@@ -20,8 +20,8 @@ class FlickrService
   end
 
   def find_pictures(search_string)
-    Flickrie.api_key = get_api_key
+    Flickr.api_key = get_api_key
     query = {:text => search_string, :license=>"1,2,3,4,5,6", :extras=>['owner_name'], :per_page=>50}
-    Flickrie.search_photos(query).map{|photo| FlickrPicture.new(photo)}
+    Flickr.photos.search(query).map{|photo| FlickrPicture.new(photo)}
   end
 end
