@@ -10,7 +10,7 @@ You should have received a copy of the GNU General Public License along with Cur
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+        <button type='button' class='close' data-dismiss='modal' aria-hidden='true' onclick="dataLayer.push({'modal_page': 2 })">&times;</button>
         <h4 class='modal-title'>Make your question snazzy - add a photo!</h4>
         Search for a photo related to your question.
       </div>
@@ -52,7 +52,7 @@ You should have received a copy of the GNU General Public License along with Cur
         </div>
         <%= link_to 'BACK', ask_question_path(@question.attributes.merge(email_confirmation: @question.email_confirmation, category_ids: @question.category_ids)),
                             id: 'modal-form-back', class: 'btn', method: 'post', remote: true %>
-        <a id='modal-form-next' class='btn btn-primary' href='#'>NEXT</a>
+        <a id='modal-form-next' class='btn btn-primary modal-2' href='#'>NEXT</a>
       </div>
     </div>
   </div>

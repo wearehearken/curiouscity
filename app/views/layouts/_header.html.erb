@@ -64,19 +64,19 @@ You should have received a copy of the GNU General Public License along with Cur
 </div>
 <div class="header-logo hidden-xs">
   <div class="container-padding">
-    <%= link_to image_tag("wbez.gif"), "http://www.wbez.org/series/curious-city" %>
+    <%= link_to image_tag("wbez.gif"), "http://www.wbez.org/series/curious-city", :id => "wbez-logo" %>
     
     <div class="header-links btn-group hidden-xs">
       <a class="collapse-data-btn text-link" id = "how-it-works-link" href="#how-it-works">How It Works</a> |
       <%= link_to "Search", search_user_questions_path, class: "text-link" %> |
       <%= link_to "About", about_path, class: "text-link" %>
-      <%= mail_to "curiouscity@wbez.org", image_tag("mail.png") %>
-      <%= link_to image_tag("twitter.png" ),"https://twitter.com/wbezcuriouscity", target:"blank" %>
-      <%= link_to image_tag("facebook.png"), "http://www.facebook.com/curiouscityproject", target:"blank" %>
-      <%= link_to image_tag("tumblr.png"), "http://wbezcuriouscity.tumblr.com", target:"blank"%>
-      <%= link_to image_tag("youtube.png"), "http://www.youtube.com/playlist?list=PL0LxICU6xOzP7qETdSUW1nKWCjWtkkpek", target:"blank"%>
-      <%= link_to image_tag("soundcloud.png"), "http://soundcloud.com/curiouscity", target:"blank"%>
-      <%= link_to image_tag("rss.png"), "http://www.wbez.org/taxonomy/term/20056/feed", target:"blank"%>
+      <%= mail_to "curiouscity@wbez.org", image_tag("mail.png"), class: "social", onclick: "dataLayer.push({'social': 'mail'})" %>
+      <%= link_to image_tag("twitter.png" ),"https://twitter.com/wbezcuriouscity", target:"blank", class: "social", onclick: "dataLayer.push({'social': 'twitter'})" %>
+      <%= link_to image_tag("facebook.png"), "http://www.facebook.com/curiouscityproject", target:"blank", class: "social", onclick: "dataLayer.push({'social': 'facebook'})" %>
+      <%= link_to image_tag("tumblr.png"), "http://wbezcuriouscity.tumblr.com", target:"blank", class: "social", onclick: "dataLayer.push({'social': 'tumblr'})"%>
+      <%= link_to image_tag("youtube.png"), "http://www.youtube.com/playlist?list=PL0LxICU6xOzP7qETdSUW1nKWCjWtkkpek", target:"blank", class: "social", onclick: "dataLayer.push({'social': 'youtube'})"%>
+      <%= link_to image_tag("soundcloud.png"), "http://soundcloud.com/curiouscity", target:"blank", class: "social", onclick: "dataLayer.push({'social': 'soundcloud'})"%>
+      <%= link_to image_tag("rss.png"), "http://www.wbez.org/taxonomy/term/20056/feed", target:"blank", class: "social", onclick: "dataLayer.push({'social': 'rss'})"%>
     </div>
   </div>
 </div>
@@ -89,7 +89,7 @@ You should have received a copy of the GNU General Public License along with Cur
     <div class="submit-question-container">
       <%= form_tag ask_question_path, id: 'ask-question-form', remote: true do %>
         <%= text_area_tag :display_text, params[:display_text], placeholder: "What do you wonder about Chicago, the region or its people that you want WBEZ to investigate?", class: "submit-question-text display_text_header", maxlength: 140%>
-        <%= submit_tag "Ask", class: "btn submit-question-btn", remote: true%>
+        <%= submit_tag "Ask", class: "btn submit-question-btn", remote: true %>
         <small class="submit-question-spec-header">
           (<span id="question_display_text_count_header"></span> characters left)
         </small>

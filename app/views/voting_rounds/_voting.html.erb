@@ -36,7 +36,7 @@ You should have received a copy of the GNU General Public License along with Cur
               <span class="image-container hidden-xs">
                 <%= render partial: "shared/question_image_link", locals: {question: question} %>
               </span>
-              <%= if !voted? then link_to "", vote_path(question_id: question.id, voting_round_id: @voting_round.id), method: :post, class: "vote hidden-xs", id: "vote"+question.id.to_s end %>
+              <%= if !voted? then link_to "", vote_path(question_id: question.id, voting_round_id: @voting_round.id), method: :post, class: "vote hidden-xs", id: "vote"+question.id.to_s, onclick: "dataLayer.push({'voting_round': " + @voting_round.id.to_s + "})" end %>
               <%= if voted? and last_vote?(question.id) then content_tag(:div, nil, id: 'vote_confirm' + question.id.to_s, class: "voted hidden-xs") end %>
               <% if voted? %><span class="rank-triangle hidden-xs"></span><% end %>
             </div>

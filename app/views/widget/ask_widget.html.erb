@@ -25,11 +25,11 @@ You should have received a copy of the GNU General Public License along with Cur
     <div class="submit-question-container">
       <%= form_tag root_path(anchor:'ask'), id: 'ask-question-form', method: :get, target: '_blank' do %>
         <%= text_area_tag :display_text, nil, placeholder: "What do you wonder about Chicago, the region or its people that you want WBEZ to investigate?", class: "submit-question-text", maxlength: 140 %>
-        <%= submit_tag "Ask", class: "btn submit-question-btn" %>
+        <%= submit_tag "Ask", class: "btn submit-question-btn", onclick: "dataLayer.push({'voting_round': " + @voting_round.id.to_s + "})" %>
       <% end %>
       <span class="char-limit"><small>(<span id="question_display_text_count"></span> characters left)</small></span>
     </div>
   </div>
-  <%= link_to image_tag("cc-logo.png", class: "widget-image-logo logo-background", alt: "WBEZ CuriousCity" ), root_url, target: "blank" %>
+  <%= link_to image_tag("cc-logo.png", class: "widget-image-logo logo-background", alt: "WBEZ CuriousCity" ), root_url, target: "blank", id: "home-link" %>
 </div>
 <%= render "footer_widget" %>

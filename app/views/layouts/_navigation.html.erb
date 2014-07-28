@@ -28,7 +28,7 @@ You should have received a copy of the GNU General Public License along with Cur
         <li><%= link_to "Our Latest on WBEZ", "http://www.wbez.org/curiouscity", target: "blank" %></li>
       </ul>
       <ul class="hidden-xs nav navbar-nav col-sm-8 pull-right nav-justified">
-        <li><%= link_to "Up for Voting", root_url, id: "up-for-voting-id", class: @up_for_voting_class %></li>
+        <li><%= link_to "Up for Voting", root_url, id: "up-for-voting-id", class: @up_for_voting_class, target: "_blank" %></li>
         <li class="dropdown" id="answered-investigating">
           <%= link_to("Answered & Investigating", filter_questions_url(status: "answered"), id: "answered-investigating-id", class: "dropdown-toggle "+ @answered_class.to_s)%> 
           <%= render partial: "layouts/category_dropdown_menu", locals:{status: "answered"} %>

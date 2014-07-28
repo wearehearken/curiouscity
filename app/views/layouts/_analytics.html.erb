@@ -7,16 +7,15 @@ Curious City is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with Curious City.  If not, see <http://www.gnu.org/licenses/>.!-->
 <% if Rails.env.uat? || Rails.env.production? %>
-  <script type="text/javascript">
-      if (!window.console) console = {log: function() {}};
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-369047-1']);
-    _gaq.push(['_setDomainName', '.wbez.org']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-     })();
-  </script>
-<% end %>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M444B5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M444B5');</script>
+<!-- End Google Tag Manager -->
+
+<% # end %>

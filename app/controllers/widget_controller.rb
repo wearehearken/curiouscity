@@ -29,6 +29,7 @@ class WidgetController < ApplicationController
   end
 
   def ask_widget
+    @voting_round = VotingRound.where(status: VotingRound::Status::Live).first
     render layout: "widget"
   end
 

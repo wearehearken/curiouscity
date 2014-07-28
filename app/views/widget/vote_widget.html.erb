@@ -45,7 +45,7 @@ You should have received a copy of the GNU General Public License along with Cur
         <% end %>
         <div class="widget-question-text">
           <%unless voted? %>
-            <%=link_to "", widget_vote_path(question_id: question.id, voting_round_id: @voting_round.id), method: :post, class: "vote", id: "vote"+question.id.to_s %> 
+            <%=link_to "", widget_vote_path(question_id: question.id, voting_round_id: @voting_round.id), method: :post, class: "vote", id: "vote"+question.id.to_s, onclick: "dataLayer.push({'voting_round': " + @voting_round.id.to_s + "})" %> 
           <% end %>
           <div class="widget-blue-hover">
             <div class="display-text">
