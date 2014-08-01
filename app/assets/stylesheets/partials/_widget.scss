@@ -25,7 +25,7 @@ $prompt: 20px;
 
 .border-container{
   @include dotted-line(border); 
-  background-image: image_url("brown_pattern.png");
+  background-image: image_url("brown_pattern.jpg");
   overflow: hidden;
   text-align: center;
 }
