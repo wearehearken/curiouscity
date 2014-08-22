@@ -11,6 +11,8 @@ You should have received a copy of the GNU General Public License along with Cur
 class AddAdminToUser < ActiveRecord::Migration
   def change
     add_column :users, :admin, :boolean, :default => false
-    User.update_all("admin = true")
+    User.all.each do |user|
+      user.update_attribute(:admin, true)
+    end
   end
 end
