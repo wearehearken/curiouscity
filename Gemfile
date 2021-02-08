@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem "acts_as_list", "~> 0.3.0"
 gem "acts-as-taggable-on", "~> 2.4.1"
-gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem "email_validator", "~> 1.4.0"
 gem "flickr-objects", "~> 0.5.0"
